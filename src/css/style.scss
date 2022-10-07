@@ -1,0 +1,114 @@
+@import url("https://necolas.github.io/normalize.css/8.0.1/normalize.css");
+@import url("https://fonts.googleapis.com/css?family=Muli:400,700&display=swap");
+
+$white:#ECEBF6;
+$blue:#272C48;
+$pink:#D4357D;
+$gray:#8A8BA1;
+$brown:#ECB332;
+$lightBlue:#27B8BF;
+
+*{
+    list-style-type: none;
+    text-decoration: none;
+    font-family: "Muli",sans-serif;
+}
+
+@mixin large-screen {
+    @media screen and (max-width: 1200px) {
+      @content;
+    }
+  }
+@mixin medium-screen {
+    @media screen and (max-width: 768px) {
+      @content;
+    }
+  }
+@mixin small-screen {
+    @media screen and (max-width: 500px) {
+      @content;
+    }
+  }  
+hr{
+    opacity: 0.2;
+}
+
+.head__nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 30px;
+    @include small-screen{
+        display: flex;
+        flex-direction: column;
+    }
+    @include medium-screen{
+        display: flex;
+        flex-direction: column;
+    }
+    @include large-screen{
+        display: flex;
+        flex-direction: column;
+    }
+    &__img{
+        cursor: pointer;
+    }
+    &__ul{
+        display: flex;
+        &__li{
+            margin: auto 4px;
+            font-weight: 600;
+            a{color:$gray;}
+            &:hover{
+                font-weight: bold;
+                background-color: $white;
+                padding: 10px;
+                border-radius: 20px;
+                transition: .4s ease;
+                a{color:$blue;}
+            }
+            @include large-screen{
+                display: flex;
+                flex-direction: column;
+                margin: auto 50px;
+            }
+            @include medium-screen{
+                display: flex;
+                flex-direction: column;
+                margin: auto 20px;
+            }
+            @include small-screen{
+                display: flex;
+                flex-direction: column;
+                margin: auto 7px;
+            }
+            
+        }
+    }
+    &__login{
+        font-weight: bold;
+        background-color: white;
+        border: none;
+        cursor: pointer;
+        margin-right: -330px;
+        @include large-screen{
+            margin: 10px;
+        }
+        @include medium-screen{
+            margin: 10px;
+        }
+        @include small-screen{
+            margin: 10px;
+        }
+    }
+    &__signup{
+        font-weight: bold;
+        border: none;
+        cursor: pointer;
+        color: $white;
+        background-color: $blue;
+        padding: 15px 25px;
+        border-radius: 10px;
+    }
+
+}

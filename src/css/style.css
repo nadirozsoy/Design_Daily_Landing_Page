@@ -1,0 +1,111 @@
+@import url("https://necolas.github.io/normalize.css/8.0.1/normalize.css");
+@import url("https://fonts.googleapis.com/css?family=Muli:400,700&display=swap");
+* {
+  list-style-type: none;
+  text-decoration: none;
+  font-family: "Muli", sans-serif;
+}
+
+hr {
+  opacity: 0.2;
+}
+
+.head__nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 30px;
+}
+@media screen and (max-width: 500px) {
+  .head__nav {
+    display: flex;
+    flex-direction: column;
+  }
+}
+@media screen and (max-width: 768px) {
+  .head__nav {
+    display: flex;
+    flex-direction: column;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .head__nav {
+    display: flex;
+    flex-direction: column;
+  }
+}
+.head__nav__img {
+  cursor: pointer;
+}
+.head__nav__ul {
+  display: flex;
+}
+.head__nav__ul__li {
+  margin: auto 4px;
+  font-weight: 600;
+}
+.head__nav__ul__li a {
+  color: #8A8BA1;
+}
+.head__nav__ul__li:hover {
+  font-weight: bold;
+  background-color: #ECEBF6;
+  padding: 10px;
+  border-radius: 20px;
+  transition: 0.4s ease;
+}
+.head__nav__ul__li:hover a {
+  color: #272C48;
+}
+@media screen and (max-width: 1200px) {
+  .head__nav__ul__li {
+    display: flex;
+    flex-direction: column;
+    margin: auto 50px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .head__nav__ul__li {
+    display: flex;
+    flex-direction: column;
+    margin: auto 20px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .head__nav__ul__li {
+    display: flex;
+    flex-direction: column;
+    margin: auto 7px;
+  }
+}
+.head__nav__login {
+  font-weight: bold;
+  background-color: white;
+  border: none;
+  cursor: pointer;
+  margin-right: -330px;
+}
+@media screen and (max-width: 1200px) {
+  .head__nav__login {
+    margin: 10px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .head__nav__login {
+    margin: 10px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .head__nav__login {
+    margin: 10px;
+  }
+}
+.head__nav__signup {
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  color: #ECEBF6;
+  background-color: #272C48;
+  padding: 15px 25px;
+  border-radius: 10px;
+}/*# sourceMappingURL=style.css.map */
