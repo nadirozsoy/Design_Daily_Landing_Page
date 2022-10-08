@@ -40,8 +40,10 @@ hr{
     align-items: center;
     margin: 15px 25px;
     @include small-screen{
+        font-size: 12px;
         display: flex;
         flex-direction: column;
+        transform: translateX(-50px);
     }
     @include medium-screen{
         display: flex;
@@ -53,6 +55,9 @@ hr{
     }
     &__img{
         cursor: pointer;
+        @include small-screen{
+            transform: translateX(25px);
+        }
     }
     &__ul{
         display: flex;
@@ -82,6 +87,8 @@ hr{
                 display: flex;
                 flex-direction: column;
                 margin: auto 7px;
+                font-size: 14px;
+                transform: translateX(10px);
             }
             
         }
@@ -94,6 +101,9 @@ hr{
         margin-right: -330px;
         &:active{
             transform: scale(.94);
+            @include small-screen{
+                transform: translateX(21px);
+            }
         }
         @include large-screen{
             margin: 10px;
@@ -102,7 +112,7 @@ hr{
             margin: 10px;
         }
         @include small-screen{
-            margin: 10px;
+            transform: translateX(20px);
         }
     }
     &__signup{
@@ -114,13 +124,19 @@ hr{
         padding: 15px 25px;
         border-radius: 10px;
         box-shadow: 0 3px 6px rgba(0,0,0,0.1), 0 3px 6px rgba(0,0,0,0.1) ;
+        @include small-screen{
+            font-size: 10px;
+            transform: translateX(20px);
+        }
         &:active{
             transform: scale(.94);
+            @include small-screen{
+                font-size: 10px;
+                transform: translateX(21px);
+            }
         }
     }
-
 }
-
 .section{
     display: flex;
     text-align: center;
@@ -142,12 +158,20 @@ hr{
             @include medium-screen{
                 transform: translateX(-200px);
             }
+            @include small-screen{
+                font-size: 10px;
+                transform: translateX(-160px);
+            }
         }
         &__free{
             font-size: 25px;
             font-weight: bolder;
             color: $blue;
             margin-bottom: -1px;
+            @include small-screen{
+                font-size: 20px;
+                transform: translateX(-25px);
+            }
             &__the{
                 text-align: center;
                 width: 500px;
@@ -157,7 +181,9 @@ hr{
                 margin-bottom: -(0.3)px;
                 opacity: 0.7;
                 @include small-screen{
-                transform: translateX(1px);
+                transform: translateX(-25px);
+                width: 300px;
+                font-size: 12px;
                 }
             }
         }
@@ -173,8 +199,9 @@ hr{
         align-items: center;
         width: 600px;
         @include small-screen{
-            width: 450px;
-            transform: translateX(10px);
+            width: 300px;
+            padding: 3px 0;
+            transform: translateX(-25px);
         }
         &__p{
             font-size: 14px;
@@ -203,6 +230,10 @@ hr{
             font-size: 15px;
             border-radius: 20px;
             padding: 10px;
+            @include small-screen{
+                width: 90px;
+                margin-left: 10px;
+            }
             &:hover{
                 font-weight: bold;
                 background-color: $white;
@@ -216,7 +247,4 @@ hr{
             }
         }
     }
-}
-.footer{
-    
 }

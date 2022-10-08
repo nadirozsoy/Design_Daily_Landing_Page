@@ -19,8 +19,10 @@ hr {
 }
 @media screen and (max-width: 500px) {
   .head__nav {
+    font-size: 12px;
     display: flex;
     flex-direction: column;
+    transform: translateX(-50px);
   }
 }
 @media screen and (max-width: 768px) {
@@ -37,6 +39,11 @@ hr {
 }
 .head__nav__img {
   cursor: pointer;
+}
+@media screen and (max-width: 500px) {
+  .head__nav__img {
+    transform: translateX(25px);
+  }
 }
 .head__nav__ul {
   display: flex;
@@ -77,6 +84,8 @@ hr {
     display: flex;
     flex-direction: column;
     margin: auto 7px;
+    font-size: 14px;
+    transform: translateX(10px);
   }
 }
 .head__nav__login {
@@ -88,6 +97,11 @@ hr {
 }
 .head__nav__login:active {
   transform: scale(0.94);
+}
+@media screen and (max-width: 500px) {
+  .head__nav__login:active {
+    transform: translateX(21px);
+  }
 }
 @media screen and (max-width: 1200px) {
   .head__nav__login {
@@ -101,7 +115,7 @@ hr {
 }
 @media screen and (max-width: 500px) {
   .head__nav__login {
-    margin: 10px;
+    transform: translateX(20px);
   }
 }
 .head__nav__signup {
@@ -114,8 +128,20 @@ hr {
   border-radius: 10px;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.1);
 }
+@media screen and (max-width: 500px) {
+  .head__nav__signup {
+    font-size: 10px;
+    transform: translateX(20px);
+  }
+}
 .head__nav__signup:active {
   transform: scale(0.94);
+}
+@media screen and (max-width: 500px) {
+  .head__nav__signup:active {
+    font-size: 10px;
+    transform: translateX(21px);
+  }
 }
 
 .section {
@@ -146,11 +172,23 @@ hr {
     transform: translateX(-200px);
   }
 }
+@media screen and (max-width: 500px) {
+  .section__article__p {
+    font-size: 10px;
+    transform: translateX(-160px);
+  }
+}
 .section__article__free {
   font-size: 25px;
   font-weight: bolder;
   color: #272C48;
   margin-bottom: -1px;
+}
+@media screen and (max-width: 500px) {
+  .section__article__free {
+    font-size: 20px;
+    transform: translateX(-25px);
+  }
 }
 .section__article__free__the {
   text-align: center;
@@ -163,7 +201,9 @@ hr {
 }
 @media screen and (max-width: 500px) {
   .section__article__free__the {
-    transform: translateX(1px);
+    transform: translateX(-25px);
+    width: 300px;
+    font-size: 12px;
   }
 }
 .section__form {
@@ -178,8 +218,9 @@ hr {
 }
 @media screen and (max-width: 500px) {
   .section__form {
-    width: 450px;
-    transform: translateX(10px);
+    width: 300px;
+    padding: 3px 0;
+    transform: translateX(-25px);
   }
 }
 .section__form__p {
@@ -209,6 +250,12 @@ hr {
   font-size: 15px;
   border-radius: 20px;
   padding: 10px;
+}
+@media screen and (max-width: 500px) {
+  .section__form__input {
+    width: 90px;
+    margin-left: 10px;
+  }
 }
 .section__form__input:hover {
   font-weight: bold;
