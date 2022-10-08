@@ -22,7 +22,7 @@ hr {
     font-size: 12px;
     display: flex;
     flex-direction: column;
-    transform: translateX(-50px);
+    transform: translateX(-35px);
   }
 }
 @media screen and (max-width: 768px) {
@@ -42,7 +42,7 @@ hr {
 }
 @media screen and (max-width: 500px) {
   .head__nav__img {
-    transform: translateX(25px);
+    transform: translateX(30px);
   }
 }
 .head__nav__ul {
@@ -100,7 +100,7 @@ hr {
 }
 @media screen and (max-width: 500px) {
   .head__nav__login:active {
-    transform: translateX(21px);
+    transform: translateX(31px);
   }
 }
 @media screen and (max-width: 1200px) {
@@ -115,7 +115,7 @@ hr {
 }
 @media screen and (max-width: 500px) {
   .head__nav__login {
-    transform: translateX(20px);
+    transform: translateX(30px);
   }
 }
 .head__nav__signup {
@@ -131,7 +131,7 @@ hr {
 @media screen and (max-width: 500px) {
   .head__nav__signup {
     font-size: 10px;
-    transform: translateX(20px);
+    transform: translateX(30px);
   }
 }
 .head__nav__signup:active {
@@ -140,7 +140,7 @@ hr {
 @media screen and (max-width: 500px) {
   .head__nav__signup:active {
     font-size: 10px;
-    transform: translateX(21px);
+    transform: translateX(31px);
   }
 }
 
@@ -187,7 +187,7 @@ hr {
 @media screen and (max-width: 500px) {
   .section__article__free {
     font-size: 20px;
-    transform: translateX(-25px);
+    transform: translateX(-5px);
   }
 }
 .section__article__free__the {
@@ -201,7 +201,7 @@ hr {
 }
 @media screen and (max-width: 500px) {
   .section__article__free__the {
-    transform: translateX(-25px);
+    transform: translateX(-5px);
     width: 300px;
     font-size: 12px;
   }
@@ -220,7 +220,7 @@ hr {
   .section__form {
     width: 300px;
     padding: 3px 0;
-    transform: translateX(-25px);
+    transform: translateX(-5px);
   }
 }
 .section__form__p {
