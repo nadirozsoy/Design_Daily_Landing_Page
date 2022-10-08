@@ -44,7 +44,7 @@ hr{
         font-size: 12px;
         display: flex;
         flex-direction: column;
-        transform: translateX(-48px);
+        transform: translateX(-32px);
     }
     @include medium-screen{
         display: flex;
@@ -144,7 +144,7 @@ hr{
     justify-content: center;
     transform: translateY(-25px);
     @include small-screen{
-        transform: translateX(-15px);
+        transform: translateX(5px);
     }
     &__article{
         display: flex;
@@ -323,8 +323,8 @@ hr{
             margin-top: 10px;
             transform: translateX(168px);
             @include small-screen{
-                transform: translateY(660px);
-                margin-left: -140px
+                transform: translateY(630px);
+                margin-left: -95px
             }
             &__child1{
                 @extend .btn;
@@ -344,7 +344,7 @@ hr{
         }
         &__icons{
             @include small-screen{
-                transform: translateY(1125px);
+                transform: translateY(1075px);
                 margin-left: 120px;
             }
             &__figma{
@@ -376,6 +376,7 @@ hr{
         padding-bottom: 200px;
         @include small-screen{
             flex-wrap: wrap;
+            transform: translateX(20px)
         }
     &__box1{
         @extend .box;

@@ -23,7 +23,7 @@ hr {
     font-size: 12px;
     display: flex;
     flex-direction: column;
-    transform: translateX(-48px);
+    transform: translateX(-32px);
   }
 }
 @media screen and (max-width: 768px) {
@@ -153,7 +153,7 @@ hr {
 }
 @media screen and (max-width: 500px) {
   .section {
-    transform: translateX(-15px);
+    transform: translateX(5px);
   }
 }
 .section__article {
@@ -361,13 +361,13 @@ hr {
 }
 @media screen and (max-width: 500px) {
   .footer__nav__btn__group {
-    transform: translateY(660px);
-    margin-left: -140px;
+    transform: translateY(630px);
+    margin-left: -95px;
   }
 }
 @media screen and (max-width: 500px) {
   .footer__nav__icons {
-    transform: translateY(1125px);
+    transform: translateY(1075px);
     margin-left: 120px;
   }
 }
@@ -395,6 +395,7 @@ hr {
 @media screen and (max-width: 500px) {
   .footer__boxes {
     flex-wrap: wrap;
+    transform: translateX(20px);
   }
 }
 .footer__boxes__box1 {
