@@ -1,5 +1,5 @@
 @import url("https://necolas.github.io/normalize.css/8.0.1/normalize.css");
-@import url("https://fonts.googleapis.com/css?family=Muli:400,700&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Muli:400,800&display=swap");
 
 $white:#ECEBF6;
 $blue:#272C48;
@@ -12,6 +12,7 @@ $lightBlue:#27B8BF;
     list-style-type: none;
     text-decoration: none;
     font-family: "Muli",sans-serif;
+    letter-spacing: 0.1px;
 }
 
 @mixin large-screen {
@@ -37,7 +38,7 @@ hr{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 30px;
+    margin: 15px 25px;
     @include small-screen{
         display: flex;
         flex-direction: column;
@@ -91,6 +92,9 @@ hr{
         border: none;
         cursor: pointer;
         margin-right: -330px;
+        &:active{
+            transform: scale(.94);
+        }
         @include large-screen{
             margin: 10px;
         }
@@ -109,6 +113,110 @@ hr{
         background-color: $blue;
         padding: 15px 25px;
         border-radius: 10px;
+        box-shadow: 0 3px 6px rgba(0,0,0,0.1), 0 3px 6px rgba(0,0,0,0.1) ;
+        &:active{
+            transform: scale(.94);
+        }
     }
 
+}
+
+.section{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    transform: translateY(-25px);
+    &__article{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        transform: translateY(25px);
+        &__p{
+            font-weight: bold;
+            color: $pink;
+            transform: translateX(-680px);
+            opacity: 0.7;
+            @include large-screen{
+                transform: translateX(-340px);
+            }
+            @include medium-screen{
+                transform: translateX(-200px);
+            }
+        }
+        &__free{
+            font-size: 25px;
+            font-weight: bolder;
+            color: $blue;
+            margin-bottom: -1px;
+            &__the{
+                text-align: center;
+                width: 500px;
+                transform: translateX(64px);
+                font-weight: 550;
+                margin-top: 25px;
+                margin-bottom: -(0.3)px;
+                opacity: 0.7;
+                @include small-screen{
+                transform: translateX(1px);
+                }
+            }
+        }
+        
+    }
+    &__form{
+        border: 1px $white solid;
+        font-size: 25px;
+        padding: 12px;
+        border-radius: 8px;
+        box-shadow: 0 3px 6px rgba(0,0,0,0.1), 0 3px 6px rgba(0,0,0,0.1) ;
+        display:flex;
+        align-items: center;
+        width: 600px;
+        @include small-screen{
+            width: 450px;
+            transform: translateX(10px);
+        }
+        &__p{
+            font-size: 14px;
+            font-weight: bold;
+            opacity: 0.9;
+            margin-left: 20px;
+        }
+        &__down{
+            font-size: 17px;
+            opacity: 0.8;
+            margin-left: 20px;
+            margin-right: 35px;
+            cursor: pointer;
+            &:active{
+                transform: scale(.90);
+            }
+        }
+        &__search{
+            opacity: 0.4;
+            margin-left: 12px;
+        }
+        &__input{
+            border: none;
+            font-weight: 600;
+            opacity: 0.6;
+            font-size: 15px;
+            border-radius: 20px;
+            padding: 10px;
+            &:hover{
+                font-weight: bold;
+                background-color: $white;
+                padding: 10px;
+                border-radius: 20px;
+                transition: .4s ease;
+                a{color:$blue;}
+            }
+            &:active{
+                transform: scale(.94);
+            }
+        }
+    }
+}
+.footer{
+    
 }
