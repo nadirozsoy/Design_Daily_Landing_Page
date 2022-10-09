@@ -304,16 +304,73 @@ hr{
         transition: .4s ease-in;
     }
 }
+.toggle{
+    z-index: 2;
+    position:absolute;
+    top: 15px;
+    font-weight: bolder;
+}
 .footer{
     transform: translateY(200px);
     box-shadow: 0 3px 6px rgba(0,0,0,0.1), 0 1px 2px rgba(0,0,0,0.1) ;
     @include small-screen{
+        transform: translateY(-250px);
         margin-top: 100px;
     }
     &__nav{
         display: flex;
         justify-content: space-between;
         padding-top: 40px;
+        &__switch{
+            position: relative;
+            width: 220px;
+            top: 20px;
+            height: 70px;
+            transform: translateX(40px);
+            border-radius: 20px;
+            @include small-screen{
+                transform: translateY(170px);
+            }
+            &::before{
+                content: "Latest";
+                left: 33px;
+                opacity: 0.7;
+                @extend .toggle
+            }
+            &::after{
+                content: "Popular";
+                right: 20px;
+                opacity: 0.4;
+                @extend .toggle
+            }
+            &__switcher{
+                appearance: none;
+                width: 220px;
+                height: 50px;
+                border-radius: 25px;
+                background: rgba(236, 235, 246,0.9);
+                outline: none;
+                transition: 0.25s;
+                box-shadow: 0 3px 6px rgba(0,0,0,0.1), 0 1px 2px rgba(0,0,0,0.1) ;
+                &:checked{
+                    background: rgba(235, 230, 230, 0.4);
+                    &+label{
+                        left: 10px;
+                        right:110px;
+                        background: #ffffff;
+                        transition: left 0.5s, right 0.4s 0.2s;
+                    }
+                }
+            }
+            &__label{
+                z-index: 1;
+                position: absolute;
+                top: 5px;
+                bottom: 24px;
+                border-radius: 20px;
+                box-shadow: 0 3px 6px rgba(0,0,0,0.1), 0 1px 2px rgba(0,0,0,0.1) ;
+            }
+        }
         @include small-screen{
             display: flex;
             justify-content: space-around;
@@ -321,10 +378,10 @@ hr{
         }
         &__btn__group{
             margin-top: 10px;
-            transform: translateX(168px);
+            transform: translateX(80px);
             @include small-screen{
                 transform: translateY(630px);
-                margin-left: -95px
+                margin-left: 5px
             }
             &__child1{
                 @extend .btn;
