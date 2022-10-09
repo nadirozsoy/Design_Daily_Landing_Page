@@ -310,6 +310,10 @@ hr{
     top: 15px;
     font-weight: bolder;
 }
+.grandchild2{
+    position: relative;
+    color: $blue;
+}
 .footer{
     transform: translateY(200px);
     box-shadow: 0 3px 6px rgba(0,0,0,0.1), 0 1px 2px rgba(0,0,0,0.1) ;
@@ -349,7 +353,6 @@ hr{
                 height: 50px;
                 border-radius: 25px;
                 background: rgba(236, 235, 246,0.9);
-                outline: none;
                 transition: 0.25s;
                 box-shadow: 0 3px 6px rgba(0,0,0,0.1), 0 1px 2px rgba(0,0,0,0.1) ;
                 &:checked{
@@ -380,7 +383,7 @@ hr{
             margin-top: 10px;
             transform: translateX(80px);
             @include small-screen{
-                transform: translateY(630px);
+                transform: translateY(650px);
                 margin-left: 5px
             }
             &__child1{
@@ -401,8 +404,8 @@ hr{
         }
         &__icons{
             @include small-screen{
-                transform: translateY(1075px);
-                margin-left: 120px;
+                transform: translateY(1100px);
+                margin-left: 140px;
             }
             &__figma{
                 @extend .icon;
@@ -443,6 +446,40 @@ hr{
             width: 350px;
             transform: translateX(-20px);
             margin-bottom: 200px;
+        }
+        &__child2{
+            &__grandchild1{
+                @extend .grandchild2;
+                width: 60px;
+                border-radius: 40px;
+                top: 120px;
+            }
+            &__grandchild2{
+                @extend .grandchild2;
+                top: 72px;
+                left: 70px;
+            }
+            &__grandchild3{
+                @extend .grandchild2;
+                top: 38px;
+                left: 100px;
+                font-weight: bold;
+                width: 200px;
+            }
+            &__grandchild4{
+                @extend .grandchild2;
+                left: 340px;
+                @include small-screen{
+                    transform: translateX(-100px)
+                }
+            }
+            &__grandchild5{
+                @extend .grandchild2;
+                left: 360px;
+                @include small-screen{
+                    transform: translateX(-100px)
+                }
+            }
         }
         &__child{
             width: 60%;
@@ -531,6 +568,42 @@ hr{
             transform: translateX(-20px);
             margin-bottom: 200px;
         }
+        &__child2{
+            &__grandchild1{
+                @extend .grandchild2;
+                width: 60px;
+                border-radius: 40px;
+                top: 325px;
+            }
+            &__grandchild2{
+                @extend .grandchild2;
+                top: 280px;
+                left: 70px;
+            }
+            &__grandchild3{
+                @extend .grandchild2;
+                top: 245px;
+                left: 100px;
+                font-weight: bold;
+                width: 200px;
+            }
+            &__grandchild4{
+                @extend .grandchild2;
+                top: 210px;
+                left: 340px;
+                @include small-screen{
+                    transform: translateX(-100px)
+                }
+            }
+            &__grandchild5{
+                @extend .grandchild2;
+                left: 360px;
+                top: 210px;
+                @include small-screen{
+                    transform: translateX(-100px)
+                }
+            }
+        }
     }
     &__box3{
         @extend .box;
@@ -540,6 +613,42 @@ hr{
             width: 350px;
             transform: translateX(-20px);
             margin-bottom: 200px;
+        }
+        &__child2{
+            &__grandchild1{
+                @extend .grandchild2;
+                width: 60px;
+                border-radius: 40px;
+                top: 325px;
+            }
+            &__grandchild2{
+                @extend .grandchild2;
+                top: 280px;
+                left: 70px;
+            }
+            &__grandchild3{
+                @extend .grandchild2;
+                top: 245px;
+                left: 100px;
+                font-weight: bold;
+                width: 200px;
+            }
+            &__grandchild4{
+                @extend .grandchild2;
+                top: 210px;
+                left: 340px;
+                @include small-screen{
+                    transform: translateX(-100px)
+                }
+            }
+            &__grandchild5{
+                @extend .grandchild2;
+                left: 360px;
+                top: 210px;
+                @include small-screen{
+                    transform: translateX(-100px)
+                }
+            }
         }
     }
     }
