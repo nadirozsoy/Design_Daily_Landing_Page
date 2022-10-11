@@ -15,16 +15,6 @@ $lightBlue:#27B8BF;
     letter-spacing: 0.1px;
     box-sizing: border-box;
 }
-@mixin large-screen {
-    @media screen and (max-width: 1200px) {
-      @content;
-    }
-  }
-@mixin medium-screen {
-    @media screen and (max-width: 768px) {
-      @content;
-    }
-  }
 @mixin small-screen {
     @media screen and (max-width: 500px) {
       @content;
@@ -40,20 +30,12 @@ body{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 15px 25px;
+    margin: 25px 25px;
     @include small-screen{
         font-size: 12px;
         display: flex;
         flex-direction: column;
         transform: translateX(-30px);
-    }
-    @include medium-screen{
-        display: flex;
-        flex-direction: column;
-    }
-    @include large-screen{
-        display: flex;
-        flex-direction: column;
     }
     &__img{
         cursor: pointer;
@@ -63,81 +45,103 @@ body{
     }
     &__ul{
         display: flex;
+        @include small-screen{
+            position: relative;
+            left: 12px;
+        }
         &__li{
-            margin: auto 4px;
+            padding: 15px;
             font-weight: 600;
+            border-radius: 20px;
             a{color:$gray;}
             &:hover{
                 font-weight: bold;
                 background-color: $white;
                 box-shadow: 0 3px 6px rgba(0,0,0,0.1), 0 3px 6px rgba(0,0,0,0.1) ;
-                padding: 10px;
+                padding: 15px;
                 border-radius: 20px;
                 transition: .4s ease;
                 a{color:$blue;}
             }
-            @include large-screen{
-                display: flex;
-                flex-direction: column;
-                margin: auto 50px;
-            }
-            @include medium-screen{
-                display: flex;
-                flex-direction: column;
-                margin: auto 20px;
+            &:active{
+                transform: scale(.90);
             }
             @include small-screen{
                 display: flex;
                 flex-direction: column;
-                margin: auto 7px;
-                font-size: 14px;
-                transform: translateX(10px);
+                margin: auto;
+                font-size: 12px;
             }
             
         }
     }
-    &__login{
-        font-weight: bold;
-        background-color: white;
-        border: none;
-        cursor: pointer;
-        margin-right: -330px;
-        &:active{
-            transform: scale(.94);
-            @include small-screen{
-                transform: translateX(31px);
+    &__button__group{
+        @include small-screen{
+            position: relative;
+            left: 19px;
+        }
+        &__login{
+            font-weight: bold;
+            background-color: white;
+            border: none;
+            cursor: pointer;
+            padding: 15px 25px;
+            &:hover{
+                opacity: 1;
+                font-weight: bold;
+                background-color: $white;
+                padding: 15px 25px;
+                border-radius: 10px;
+                box-shadow: 0 3px 6px rgba(0,0,0,0.1), 0 3px 6px rgba(0,0,0,0.1) ;
+                transition: .4s ease;
+            }
+            &:active{
+                transform: scale(.94);
             }
         }
-        @include large-screen{
-            margin: 10px;
-        }
-        @include medium-screen{
-            margin: 10px;
-        }
-        @include small-screen{
-            transform: translateX(30px);
-        }
-    }
-    &__signup{
-        font-weight: bold;
-        border: none;
-        cursor: pointer;
-        color: $white;
-        background-color: $blue;
-        padding: 15px 25px;
-        border-radius: 10px;
-        box-shadow: 0 3px 6px rgba(0,0,0,0.1), 0 3px 6px rgba(0,0,0,0.1) ;
-        @include small-screen{
-            font-size: 10px;
-            transform: translateX(30px);
-        }
-        &:active{
-            transform: scale(.94);
+        &__signup{
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            color: $white;
+            background-color: $blue;
+            padding: 15px 25px;
+            border-radius: 10px;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.1), 0 3px 6px rgba(0,0,0,0.1) ;
+            &:hover{
+                opacity: 1;
+                font-weight: bold;
+                padding: 15px 25px;
+                background-color: $white;
+                color: $blue;
+                border-radius: 10px;
+                box-shadow: 0 3px 6px rgba(0,0,0,0.1), 0 3px 6px rgba(0,0,0,0.1) ;
+                transition: .4s ease;
+            }
             @include small-screen{
                 font-size: 10px;
-                transform: translateX(31px);
+            }
+            &:active{
+                transform: scale(.94);
+                @include small-screen{
+                    font-size: 10px;
+                }
             }
         }
+    }
+}
+.aside__p{
+    font-weight: bold;
+    color: $pink;
+    display: flex;
+    justify-content: start;
+    text-align: start;
+    position: relative;
+    left: 40px;
+    top: 20px;
+    opacity: 0.7;
+    @include small-screen{
+        font-size: 10px;
     }
 }
 .section{
@@ -153,22 +157,6 @@ body{
         flex-direction: column;
         text-align: center;
         transform: translateY(25px);
-        &__p{
-            font-weight: bold;
-            color: $pink;
-            transform: translateX(-680px);
-            opacity: 0.7;
-            @include large-screen{
-                transform: translateX(-340px);
-            }
-            @include medium-screen{
-                transform: translateX(-200px);
-            }
-            @include small-screen{
-                font-size: 10px;
-                transform: translateX(-140px);
-            }
-        }
         &__free{
             font-size: 25px;
             font-weight: bolder;
@@ -227,23 +215,28 @@ body{
         }
         &__search{
             opacity: 0.4;
+            position: relative;
+            bottom: 2px;
             margin-left: 12px;
         }
         &__input{
             border: none;
-            font-weight: 600;
+            font-weight: bold;
             opacity: 0.6;
+            position: relative;
+            bottom: 2px;
             font-size: 15px;
             border-radius: 20px;
-            padding: 10px;
+            padding: 15px 10px;
             @include small-screen{
                 width: 90px;
                 margin-left: 10px;
             }
             &:hover{
+                opacity: 1;
                 font-weight: bold;
                 background-color: $white;
-                padding: 10px;
+                padding: 15px 10px;
                 border-radius: 20px;
                 box-shadow: 0 3px 6px rgba(0,0,0,0.1), 0 3px 6px rgba(0,0,0,0.1) ;
                 transition: .4s ease;
@@ -283,12 +276,14 @@ body{
     background: rgb(255, 255, 255);
     font-weight: bold;
     color: rgba(39, 44, 72,0.6);
-    border: none;
+    border: 0.1px solid rgb(255, 255, 255) ;
     padding: 14px;
+    border-radius: 24px;
     cursor: pointer;
     &:hover{
-        border: 00.1px solid gray ;
+        border: 0.1px solid gray ;
         border-radius: 24px;
+        padding: 14px;
         box-shadow: 0 3px 6px rgba(0,0,0,0.1), 0 3px 6px rgba(0,0,0,0.1) ;
         transition: .4s ease;
         color: rgba(39, 44, 72,1);
@@ -300,7 +295,8 @@ body{
     padding: 14px;
     font-size: 20px;
     border-radius: 30px;
-    transform: translateX(-60px);
+    position: relative;
+    right: 20%;
     cursor: pointer;
     &:hover{
         border: 00.1px solid $pink ;
@@ -308,12 +304,6 @@ body{
         box-shadow: 0 3px 6px rgba(0,0,0,0.1), 0 3px 6px rgba(0,0,0,0.1) ;
         transition: .4s ease-in;
     }
-}
-.toggle{
-    z-index: 2;
-    position:absolute;
-    top: 15px;
-    font-weight: bolder;
 }
 .grandchild2{
     position: relative;
@@ -329,54 +319,81 @@ body{
     &__nav{
         display: flex;
         justify-content: space-between;
+        flex-wrap: wrap;
         padding-top: 40px;
         &__switch{
             position: relative;
-            width: 220px;
-            top: 20px;
-            height: 70px;
-            transform: translateX(40px);
-            border-radius: 20px;
+            top: 30px;
+            box-shadow: 0px 3px 6px rgba(0,0,0,0.1), 0 3px 6px rgba(0,0,0,0.1) ;
+            border-radius: 40px;
+            left: 30px;
+            display: inline-block;
+            width: 225px;
+            height: 44px;
             @include small-screen{
-                transform: translateY(170px);
+                position: relative;
+                top: 70px;
+                left: 5px;
+            }
+            &:active{
+                transform: scale(.99);
             }
             &::before{
                 content: "Latest";
+                z-index: 2;
+                position:absolute;
+                top: 12px;
+                font-weight: bolder;
                 left: 33px;
-                opacity: 0.7;
-                @extend .toggle
+                z-index: 2;
+                color: $gray;
             }
             &::after{
                 content: "Popular";
-                right: 20px;
-                opacity: 0.4;
-                @extend .toggle
+                float: right;
+                font-weight: bolder;
+                color: $gray;
+                position: relative;
+                top:11px;
+                left: -25px;
             }
-            &__switcher{
+            &__input{
                 appearance: none;
-                width: 220px;
-                height: 50px;
-                border-radius: 25px;
-                background: rgba(236, 235, 246,0.9);
-                transition: 0.25s;
-                box-shadow: 0 3px 6px rgba(0,0,0,0.1), 0 1px 2px rgba(0,0,0,0.1) ;
-                &:checked{
-                    background: rgba(235, 230, 230, 0.4);
-                    &+label{
-                        left: 10px;
-                        right:110px;
-                        background: #ffffff;
-                        transition: left 0.5s, right 0.4s 0.2s;
-                    }
+            }
+            &__slider{
+                position: absolute;
+                cursor: pointer;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background-color: $blue;
+                transition: .4s;
+                border-radius: 40px;
+                &::before{
+                    position: absolute;
+                    height: 40px;
+                    content: "";
+                    width: 100px;
+                    left: 10px;
+                    bottom: 2px;
+                    box-shadow: 0px 3px 6px rgba(0,0,0,0.1), 0 3px 6px rgba(0,0,0,0.1) ;
+                    background-color: rgb(255, 255, 255);
+                    transition: .4s;
+                    border-radius: 40px;
                 }
             }
-            &__label{
-                z-index: 1;
-                position: absolute;
-                top: 5px;
-                bottom: 24px;
-                border-radius: 20px;
-                box-shadow: 0 3px 6px rgba(0,0,0,0.1), 0 1px 2px rgba(0,0,0,0.1) ;
+            &__input:checked + &__slider{
+                background-color: $white;
+                z-index: -1;
+                &::before{
+                    transform: translateX(107px);
+                }
+            }
+            &__input:not(:checked) + &__slider{
+                background-color: $white;
+                box-shadow: 0px 3px 6px rgba(0,0,0,0.1), 0 3px 6px rgba(0,0,0,0.1) ;
+                z-index: -1;
             }
         }
         @include small-screen{
@@ -386,66 +403,105 @@ body{
         }
         &__btn__group{
             margin-top: 10px;
-            transform: translateX(80px);
+            display: flex;
+            text-align: center;
+            align-items: center;
+            padding-left: 9%;
             @include small-screen{
-                transform: translateY(650px);
-                margin-left: 5px
+                position: relative;
+                top: 650px;
+                z-index: 2;
+                margin-left: -24px
             }
             &__child1{
                 @extend .btn;
+                &:active{
+                    transform: scale(.90);
+                }
             }
             &__child2{
                 @extend .btn;
+                &:active{
+                    transform: scale(.90);
+                }
             }
             &__child3{
                 @extend .btn;
+                &:active{
+                    transform: scale(.90);
+                }
             }
             &__child4{
                 @extend .btn;
+                &:active{
+                    transform: scale(.90);
+                }
             }
             &__child5{
                 @extend .btn;
+                &:active{
+                    transform: scale(.90);
+                }
             }
         }
         &__icons{
             @include small-screen{
-                transform: translateY(1100px);
-                margin-left: 140px;
+                position: relative;
+                top: 1140px;
+                margin-left: 38%;
+                z-index: 2;
             }
             &__figma{
                 @extend .icon;
-                background: linear-gradient($pink,$blue)
+                background: linear-gradient($pink,$blue);
+                &:active{
+                    transform: scale(.90);
+                }
             }
             &__gem{
                 @extend .icon;
                 color: $brown;
+                &:active{
+                    transform: scale(.90)
+                }
             }
             &__js{
                 @extend .icon;
                 color: $pink;
+                &:active{
+                    transform: scale(.90);
+                }
             }
             &__css{
                 @extend .icon;
-                color: $lightBlue
+                color: $lightBlue;
+                &:active{
+                    transform: scale(.90);
+                }
             }
             &__sass{
                 @extend .icon;
                 color: $pink;
+                &:active{
+                    transform: scale(.90);
+                }
             }
         }
     }
     &__boxes{
         transform: translateY(50px);
         display: flex;
-        justify-content: space-around;
+        justify-content: space-evenly;
         padding-bottom: 200px;
+        flex-wrap: wrap;
         @include small-screen{
-            flex-wrap: wrap;
             transform: translateX(20px);
         }
     &__box1{
         @extend .box;
         background: rgba(60, 158, 163, 0.1);
+        width: 470px;
+        margin-bottom: 200px;
         box-shadow: 0 3px 6px rgba(0,0,0,0.1), 0 3px 6px rgba(0,0,0,0.1) ;
         color: rgba(60, 158, 163,0);
         @include small-screen{
@@ -457,6 +513,7 @@ body{
             &__grandchild1{
                 @extend .grandchild2;
                 width: 60px;
+                box-shadow: 0 3px 6px rgba(0,0,0,0.1), 0 3px 6px rgba(0,0,0,0.1) ;
                 border-radius: 40px;
                 top: 120px;
             }
@@ -474,8 +531,10 @@ body{
             }
             &__grandchild4{
                 @extend .grandchild2;
+                padding-left: 20px;
                 left: 340px;
                 @include small-screen{
+                    margin-left: -20px;
                     transform: translateX(-100px)
                 }
             }
@@ -493,8 +552,7 @@ body{
             box-shadow: 0 3px 6px rgba(0,0,0,0.1), 0 1px 2px rgba(0,0,0,0.1) ;
             color: $blue;
             border-radius: 4px;
-            transform: translateX(-10px);
-            padding: 25px 40px;
+            padding: 8% 10%;
             font-weight: bold;
             letter-spacing: 0.1px;
             background-color: white;
@@ -512,68 +570,77 @@ body{
             &__grandchild2{
                 font-size: 8px
             }
-            &__grandchild3{
-                font-size: 9px
+            &__aside{
+                position: relative;
+                display: flex;
             }
-            &__grandchild4{
-                font-size: 4px;
-                width:85px
-            }
-            &__grandchild5{
-                @extend .grandchild;
-                &-2{
-                    transform: translateY(8px);
+            &__aside1{
+                &__grandchild3{
+                    font-size: 9px
+                }
+                &__grandchild4{
+                    font-size: 4px;
+                    width:85px
+                }
+                &__grandchild5{
+                    @extend .grandchild;
+                    &-2{
+                        position: relative;
+                        top: 9px;
+                    }
+                }
+                &__grandchild6{
+                    font-size: 4px;
+                    position: relative;
+                    top: 10px;
                 }
             }
-            &__grandchild6{
-                font-size: 4px;
-                transform: translateY(6px);
-            }
-            &__grandchild7{
-                float: right;
-                margin-right: 13px;
-                font-size: 9px;
-                transform: translateY(-85px);
-            }
-            &__grandchild8{
-                float:right;
-                transform: translateY(-90px);
-                margin-left: 100px;
-                font-size: 4px;
-                width:75px;
-            }
-            &__grandchild9{
-                @extend .grandchild;
-                margin-right: 15px;
-                float: right;
-                transform: translateY(-90px);
-                &-2{
-                    transform: translateY(4px);
+            &__aside2{
+                display: flex;
+                flex-direction: column;
+                padding-left: 10%;
+                @include small-screen{
+                    padding-left: 20%;
                 }
-            }
-            &__grandchild10{
-                font-size: 4px;
-                transform: translateX(120px);
-            }
-            &__grandchild11{
-                font-size: 4px;
-                transform: translateX(120px);
-            }
-            &__grandchild12{
-                font-size: 4px;
-                transform: translateX(120px);
+                &__grandchild7{
+                    font-size: 9px;
+                }
+                &__grandchild8{
+                    font-size: 4px;
+                    margin-top: -1%;
+                    width:75px;
+                }
+                &__grandchild9{
+                    @extend .grandchild;
+                    &-2{
+                        position: relative;
+                        top: 22%;
+                    }
+                }
+                &__grandchild10{
+                    padding-top: 13%;
+                    font-size: 4px;
+                }
+                &__grandchild11{
+                    font-size: 4px;
+                }
+                &__grandchild12{
+                    font-size: 4px;
+                }
             }
         }
     }
     &__box2{
         @extend .box;
+        width: 470px;
+        margin-bottom: 200px;
         background-color: $blue;
         box-shadow: 0 3px 6px rgba(0,0,0,0.1), 0 3px 6px rgba(0,0,0,0.1) ;
         color: rgba(60, 158, 163,0);
         @include small-screen{
-            width: 350px;
+            width: 90%;
             transform: translateX(-20px);
-            margin-bottom: 200px;
+            margin-bottom: 250px;
         }
         &__child3{
             color: $blue;
@@ -581,8 +648,8 @@ body{
             background-color: #ffffff;
             padding: 3px;
             position: relative;
-            top: -333px;
-            left: 372px;
+            top: -98%;
+            left: 379px;
             @include small-screen{
                 position: relative;
                 transform: translateY(8px);
@@ -591,17 +658,18 @@ body{
         }
         &__child2{
             background:rgba(90, 100, 159, 0.2);
-            width: 135px;
+            width: 30%;
             box-shadow: 0 3px 6px rgba(0,0,0,0.1), 0 3px 6px rgba(0,0,0,0.1) ;
             height: 150px;
             border-radius: 5px;
             position:relative;
-            top: -160px;
+            top: -170px;
             left: 260px;
             @include small-screen{
                 position: relative;
-                top: -150px;
-                left: 190px;
+                top: -46%;
+                width: 37%;
+                left: 55%;
             }
             &__grandchild1{
                 z-index: 2;
@@ -633,19 +701,22 @@ body{
                 color: white;
                 font-size: 5px;
                 position: relative;
-                top: -15px;
+                top: -25px;
+                padding-top: 24%;
                 left: 70px;
             }
             &__grandchild6{
                 color: white;
                 font-size: 5px;
                 position: relative;
+                padding-top: 18%;
                 top: -18px;
                 left: 70px;
             }
             &__switch1{
-                position: relative;
-                top: 5px;
+                position: absolute;
+                top: 80px;
+                z-index: 2;
                 left: 20px;
                 display: inline-block;
                 width: 45px;
@@ -683,8 +754,8 @@ body{
                 }
             }
             &__switch2{
-                position: relative;
-                top: 1px;
+                position: absolute;
+                top: 120px;
                 left: 20px;
                 display: inline-block;
                 width: 45px;
@@ -723,15 +794,16 @@ body{
             }
         }
         &__child1{
-            width: 130px;
-            height: 200px;
+            width: 30%;
+            height: 60%;
             background:rgba(90, 100, 159, 0.3);
             position:relative;
-            top: 40px;
+            top: 11%;
             border-radius: 5px;
             box-shadow: 0 3px 6px rgba(0,0,0,0.1), 0 3px 6px rgba(0,0,0,0.1) ;
-            left: 90px;
+            left: 20%;
             @include small-screen{
+                width: 40%;
                 position: relative;
                 top: 50px;
                 left: 30px;
@@ -810,10 +882,11 @@ body{
         }
         &__child4{
             position: relative;
-            bottom: 371px;
+            bottom: 381px;
             &__grandchild1{
                 @extend .grandchild2;
                 width: 60px;
+                box-shadow: 0 3px 6px rgba(0,0,0,0.1), 0 3px 6px rgba(0,0,0,0.1) ;
                 border-radius: 40px;
                 top: 325px;
             }
@@ -832,8 +905,10 @@ body{
             &__grandchild4{
                 @extend .grandchild2;
                 top: 210px;
+                padding-left: 20px;
                 left: 340px;
                 @include small-screen{
+                    margin-left: -20px;
                     transform: translateX(-100px)
                 }
             }
@@ -849,6 +924,7 @@ body{
     }
     &__box3{
         @extend .box;
+        width: 470px;
         background: rgba(212, 53, 125, 0.1);
         box-shadow: 0 3px 6px rgba(0,0,0,0.1), 0 3px 6px rgba(0,0,0,0.1) ;
         color: rgba(60, 158, 163,0);
@@ -857,10 +933,78 @@ body{
             transform: translateX(-20px);
             margin-bottom: 200px;
         }
+        &__child1{
+            width: 230px;
+            height: 160px;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.1), 0 1px 2px rgba(0,0,0,0.1) ;
+            border-radius: 5px;
+            padding: 20px 30px;
+            background-color: white;
+            position: relative;
+            left: 90px;
+            top: 30px;  
+            @include small-screen{
+                position: relative;
+                left: 30px;
+                width: 200px;
+                top: 50px;
+            }
+            &__grandchild1{
+                font-size: 11px;
+                width: 100px;
+                color:$blue;
+                font-weight: bold;
+            }
+            &__grandchild2{
+                font-size: 8px;
+                border: 0.001px solid rgb(187, 180, 180);
+                width: 88px;
+                padding: 6px;
+                border-radius: 6px;
+                position: relative;
+                top: 20px;
+                color:$blue;
+                font-weight: bold;
+            }
+            &__grandchild3{
+                font-size: 5px;
+                border: 0.001px solid rgb(187, 180, 180);
+                margin-top: 10px;
+                width: 88px;
+                background-color: $blue;
+                padding: 10px;
+                border-radius: 6px;
+                position: relative;
+                text-align: center;
+                top: 20px;
+                color:$white;
+                font-weight: bold;
+            }
+            &__grandchild4{
+                color: #ffffff;
+                position: relative;
+                padding: 10px;
+                top: -100px;
+                left: 160px;
+                border-radius: 20px;
+                background-color: #272C48;
+                @include small-screen{
+                    position: relative;
+                    left: 135px;
+                }
+            }
+        }
         &__child2{
+            position: relative;
+            top: -290px;
+            @include small-screen{
+                position: relative;
+                top: -290px;
+            }
             &__grandchild1{
                 @extend .grandchild2;
                 width: 60px;
+                box-shadow: 0 3px 6px rgba(0,0,0,0.1), 0 3px 6px rgba(0,0,0,0.1) ;
                 border-radius: 40px;
                 top: 325px;
             }
@@ -879,8 +1023,10 @@ body{
             &__grandchild4{
                 @extend .grandchild2;
                 top: 210px;
+                padding-left: 20px;
                 left: 340px;
                 @include small-screen{
+                    margin-left: -20px;
                     transform: translateX(-100px)
                 }
             }
@@ -891,6 +1037,22 @@ body{
                 @include small-screen{
                     transform: translateX(-100px)
                 }
+            }
+        }
+        &__child3{
+            width: 130px;
+            height: 130px;
+            background-color: $blue;
+            border-radius: 5px;
+            position: relative;
+            top: -40px;
+            left: 255px;
+            z-index: -1;
+            @include small-screen{
+                position: relative;
+                left: 160px;
+                top: -15px;
+
             }
         }
     }
