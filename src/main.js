@@ -3,7 +3,7 @@ const filter = document.querySelector(".section__form__input")
 filter.addEventListener("keyup", filterContent)
 
 function filterContent(a) {
-    const filterValue = a.target.value.toLowerCase()
+    const filterValue = a.target.value.toLowerCase().trim()
     const boxes = document.querySelectorAll('.list-box')
     boxes.forEach(function (box) {
         const text = box.textContent.toLowerCase()
