@@ -1,0 +1,14 @@
+.aside__p{
+    font-weight: bold;
+    color: $pink;
+    display: flex;
+    justify-content: start;
+    text-align: start;
+    position: relative;
+    left: 40px;
+    top: 20px;
+    opacity: 0.7;
+    @include small-screen{
+        font-size: 10px;
+    }
+}

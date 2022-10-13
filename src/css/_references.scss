@@ -1,0 +1,61 @@
+.box{
+    width: 30%;
+    height: 350px;
+    border-radius: 20px;
+}
+.gem{
+    font-size: 25px;
+    background-color: white;
+    position: relative;
+    top: 30px;
+    border-radius: 30px;
+    padding: 10px;
+    left: 30px;
+    color: $brown;
+}
+.grandchild{
+    background: rgb(61, 85, 182);
+    width: 60px;
+    text-align: center;
+    font-size: 5px;
+    color: white;
+    border-radius: 3px;
+    height: 20px;
+}
+.btn{
+    background: rgb(255, 255, 255);
+    font-weight: bold;
+    color: rgba(39, 44, 72,0.6);
+    border: 0.1px solid rgb(255, 255, 255) ;
+    padding: 14px;
+    border-radius: 24px;
+    cursor: pointer;
+    &:hover{
+        border: 0.1px solid rgba(39, 44, 72, 0.2) ;
+        border-radius: 24px;
+        padding: 14px;
+        box-shadow: 0 3px 6px rgba(0,0,0,0.1), 0 3px 6px rgba(0,0,0,0.1) ;
+        transition: .4s ease;
+        color: rgba(39, 44, 72,1);
+    }
+}
+.icon{
+    border: 0.1px rgb(234, 230, 223) solid;
+    margin: 14px;
+    padding: 14px;
+    font-size: 20px;
+    border-radius: 30px;
+    position: relative;
+    right: 20%;
+    cursor: pointer;
+    &:hover{
+        border: 00.1px solid $pink ;
+        border-radius: 40px;
+        box-shadow: 0 3px 6px rgba(0,0,0,0.1), 0 3px 6px rgba(0,0,0,0.1) ;
+        transition: .4s ease-in;
+    }
+}
+.grandchild2{
+    position: relative;
+    color: $blue;
+}
