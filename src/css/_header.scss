@@ -15,6 +15,10 @@
     }
     &__img{
         cursor: pointer;
+        transition: transform .4s ease;
+        &:hover{
+            transform: scale(1.1);
+        }
         @include small-screen{
             transform: translateX(30px);
         }

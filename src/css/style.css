@@ -8,6 +8,12 @@
   box-sizing: border-box;
 }
 
+@media screen and (max-width: 500px) {
+  html, body {
+    overflow-x: hidden;
+  }
+}
+
 hr {
   opacity: 0.2;
 }
@@ -38,6 +44,10 @@ body {
 }
 .head__nav__img {
   cursor: pointer;
+  transition: transform 0.4s ease;
+}
+.head__nav__img:hover {
+  transform: scale(1.1);
 }
 @media screen and (max-width: 500px) {
   .head__nav__img {
@@ -529,6 +539,10 @@ body {
   margin-bottom: 200px;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.1);
   color: rgba(60, 158, 163, 0);
+  transition: transform 0.4s ease;
+}
+.footer__boxes__box1:hover {
+  transform: scale(1.1);
 }
 @media screen and (max-width: 500px) {
   .footer__boxes__box1 {
@@ -656,6 +670,10 @@ body {
   background-color: #272C48;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.1);
   color: rgba(60, 158, 163, 0);
+  transition: transform 0.4s ease;
+}
+.footer__boxes__box2:hover {
+  transform: scale(1.1);
 }
 @media screen and (max-width: 500px) {
   .footer__boxes__box2 {
@@ -957,6 +975,10 @@ body {
   background: rgba(212, 53, 125, 0.1);
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.1);
   color: rgba(60, 158, 163, 0);
+  transition: transform 0.4s ease;
+}
+.footer__boxes__box3:hover {
+  transform: scale(1.1);
 }
 @media screen and (max-width: 500px) {
   .footer__boxes__box3 {

@@ -192,6 +192,10 @@
         margin-bottom: 200px;
         box-shadow: 0 3px 6px rgba(0,0,0,0.1), 0 3px 6px rgba(0,0,0,0.1) ;
         color: rgba(60, 158, 163,0);
+        transition: transform .4s ease;
+        &:hover{
+            transform: scale(1.1);
+        }
         @include small-screen{
             width: 350px;
             transform: translateX(-20px);
@@ -325,6 +329,10 @@
         background-color: $blue;
         box-shadow: 0 3px 6px rgba(0,0,0,0.1), 0 3px 6px rgba(0,0,0,0.1) ;
         color: rgba(60, 158, 163,0);
+        transition: transform .4s ease;
+        &:hover{
+            transform: scale(1.1);
+        }
         @include small-screen{
             width: 90%;
             transform: translateX(-20px);
@@ -616,6 +624,10 @@
         background: rgba(212, 53, 125, 0.1);
         box-shadow: 0 3px 6px rgba(0,0,0,0.1), 0 3px 6px rgba(0,0,0,0.1) ;
         color: rgba(60, 158, 163,0);
+        transition: transform .4s ease;
+        &:hover{
+            transform: scale(1.1);
+        }
         @include small-screen{
             width: 350px;
             transform: translateX(-20px);
