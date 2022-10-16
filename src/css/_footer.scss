@@ -6,6 +6,7 @@
         margin-top: 280px;
     }
     &__nav{
+        -webkit-tap-highlight-color: transparent;
         display: flex;
         justify-content: space-between;
         flex-wrap: wrap;
@@ -177,6 +178,7 @@
         }
     }
     &__boxes{
+        -webkit-tap-highlight-color: transparent;
         transform: translateY(50px);
         display: flex;
         justify-content: space-evenly;

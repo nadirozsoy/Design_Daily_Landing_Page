@@ -23,6 +23,7 @@ body {
 }
 
 .head__nav {
+  -webkit-tap-highlight-color: transparent;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -170,6 +171,7 @@ body {
 }
 
 .section {
+  -webkit-tap-highlight-color: transparent;
   display: flex;
   text-align: center;
   justify-content: center;
@@ -363,6 +365,7 @@ body {
   }
 }
 .footer__nav {
+  -webkit-tap-highlight-color: transparent;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
@@ -522,6 +525,7 @@ body {
   transform: scale(0.9);
 }
 .footer__boxes {
+  -webkit-tap-highlight-color: transparent;
   transform: translateY(50px);
   display: flex;
   justify-content: space-evenly;
