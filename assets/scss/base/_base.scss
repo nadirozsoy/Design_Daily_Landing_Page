@@ -1,0 +1,19 @@
+*{
+    list-style-type: none;
+    text-decoration: none;
+    font-family: "Muli",sans-serif;
+    letter-spacing: 0.1px;
+    box-sizing: border-box;
+}
+html,body{
+    @include small-screen{
+        overflow-x: hidden;
+    }
+}
+
+hr{
+    opacity: 0.2;
+}
+body{
+    overflow-x: hidden;
+}
